@@ -7,7 +7,7 @@ from tqdm import tqdm
 
 async def async_do(n: int) -> List[bool]:
     async def do() -> bool:
-        await asyncio.sleep(10)
+        await asyncio.sleep(1)
         return True
 
     tasks = [do() for i in range(n)]
