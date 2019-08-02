@@ -39,3 +39,5 @@ if __name__ == '__main__':
     plt.xscale("log")
     plt.savefig("compute_time.png")
 
+    # Save Results
+    df.to_csv("compute_results.csv")
