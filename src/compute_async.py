@@ -15,7 +15,7 @@ async def async_do(n: int) -> List[bool]:
     return [await f for f in tqdm(asyncio.as_completed(tasks), total=len(tasks))]
 
 
-def execute(n: int) -> Dict[str, float]: 
+def trial(n: int) -> Dict[str, float]:
     loop = asyncio.get_event_loop()
     start = time.time()
     loop.run_until_complete(async_do(n))
@@ -30,7 +30,7 @@ if __name__ == '__main__':
 
     n_arr = [10 ** i for i in range(1, 7)] 
     records = []
-    df = pd.DataFrame.from_records([execute(n) for n in n_arr])
+    df = pd.DataFrame.from_records([trial(n) for n in n_arr])
 
     # Visualization
     sns.lineplot(data=df, x="n", y="time")
