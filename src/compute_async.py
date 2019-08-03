@@ -28,7 +28,7 @@ if __name__ == '__main__':
     import pandas as pd
     import seaborn as sns 
 
-    n_arr = [10 ** i for i in range(1, 8)] 
+    n_arr = [10 ** i for i in range(1, 7)] 
     records = []
     df = pd.DataFrame.from_records([execute(n) for n in n_arr])
 
